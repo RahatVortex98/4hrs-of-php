@@ -198,11 +198,19 @@
             <input type="text" name="y">
             <input type="submit" value="total">
 
+      </form> <br>
+      <h1>Counting Circle radius</h1>
+      <form action="index.php" method="post">
+            <label >raidus of circle</label>
+            <input type="text" name="radius">
+            
+            <input type="submit" value="Calculate">
+
       </form>
       <?php
-            $x=$_POST["x"];
-            $y=$_POST["y"];
-            $total = null;
+            // $x=$_POST["x"];
+            // $y=$_POST["y"];
+            // $total = null;
 
             // $total = abs($x); -4 to 4
             // $total =round($x); 2.99 to 3
@@ -212,8 +220,21 @@
             // $total = max($x,$y); 10 or 30 = 30
             // $total = min($x,$y); 10 or 30 = 10
             // $total = pi();
-            $total = rand();
-            echo $total;
+            // $total = rand();
+            // $total = rand(1,100);
+            // echo $total;
+
+            $radius = $_POST['radius'];
+            $cicumfernce = null;
+            $area = null;
+            
+            $cicumfernce = 2*pi()*$radius;
+            $area = pi() * pow($radius,2); 
+            $volume = 4/3 * pi()* pow($radius,3);
+            //  echo $cicumfernce;
+            echo "Circumference: " . round($cicumfernce, 2) . "<br>";
+            echo "Area: " . round($area, 2) . "<br>";
+            echo "Volume: " . round($area, 2);
       ?>
 </body>
 </html>
